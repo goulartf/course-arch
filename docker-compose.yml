@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    container_name: app
+    volumes:
+      - ./:/app
+    command: bash -c "npm install && npm run dev"
